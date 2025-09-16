@@ -21,7 +21,7 @@ A powerful Node.js/Express backend API for Maiths AI Girlfriend, providing HTTP 
 
 Check out our project in action! Watch the demo video to see Maiths AI Girlfriend in action:
 
-🎬 **[Watch Demo Video](https://drive.google.com/file/d/1r0Q8819U2n0KenjfkdP0OQkkRQQIh-Ka/view?usp=sharing)**
+🎬 **[Watch Demo Video](https://github.com/user-attachments/assets/1c804678-df1d-495e-a8ce-8682b28e26d8)**
 
 ## 🚀 Quick Start
 
