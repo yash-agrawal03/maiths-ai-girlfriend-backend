@@ -1,0 +1,2613 @@
+{
+    "version": "1.0.0",
+    "id": "cmfbkauhq0dcb23qurcvyqmcp",
+    "defaultModel": "gemini-2.0-flash",
+    "name": "Maiths - AI Tech Girlfriend",
+    "teamId": "cmfbjw6il0d8bo3wt06q1bqwb",
+    "parentTeamId": "cmfbjw6il0d8bo3wt06q1bqwb",
+    "components": [
+        {
+            "id": "M1DSA001",
+            "name": "APIEndpoint",
+            "outputs": [
+                {
+                    "name": "headers",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                },
+                {
+                    "name": "body",
+                    "color": "#3C89F9",
+                    "index": 1,
+                    "default": true
+                },
+                {
+                    "name": "query",
+                    "color": "#3C89F9",
+                    "index": 2,
+                    "default": true
+                },
+                {
+                    "name": "body.problem",
+                    "color": "#3C89F9",
+                    "index": 3,
+                    "default": false
+                },
+                {
+                    "name": "body.language",
+                    "color": "#3C89F9",
+                    "index": 4,
+                    "default": false
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "problem",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "language",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                }
+            ],
+            "data": {
+                "endpoint": "solve_dsa",
+                "description": "Help solve Data Structures and Algorithms problems with explanations and code examples",
+                "method": "POST",
+                "ai_exposed": true,
+                "advancedModeEnabled": true,
+                "endpointLabel": "",
+                "summary": ""
+            },
+            "top": "0px",
+            "left": "50px",
+            "width": "",
+            "height": "",
+            "displayName": "APIEndpoint",
+            "title": "DSA Problem Solver",
+            "aiTitle": "",
+            "description": "Solve DSA problems together"
+        },
+        {
+            "id": "M1DSA002",
+            "name": "GenAILLM",
+            "outputs": [
+                {
+                    "name": "Reply",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                },
+                {
+                    "name": "solution",
+                    "color": "#3C89F9",
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "explanation",
+                    "color": "#3C89F9",
+                    "index": 2,
+                    "default": false
+                },
+                {
+                    "name": "complexity",
+                    "color": "#3C89F9",
+                    "index": 3,
+                    "default": false
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "problem",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "language",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                }
+            ],
+            "data": {
+                "model": "smythos/gpt-4o",
+                "prompt": "Hey babe! 💕 Let's solve this DSA problem together!\n\nProblem: {{problem}}\nPreferred Language: {{language}}\n\nI'll provide:\n1. A clear explanation of the approach\n2. Step-by-step algorithm\n3. Clean, well-commented code\n4. Time and space complexity analysis\n5. Test cases to verify\n\nLet me break this down for you in a way that's easy to understand! 🤓✨",
+                "temperature": "0.7",
+                "maxTokens": "2000",
+                "stopSequences": "",
+                "topP": "1",
+                "topK": "0",
+                "frequencyPenalty": "0",
+                "presencePenalty": "0",
+                "passthrough": false,
+                "useSystemPrompt": false,
+                "useContextWindow": false,
+                "maxContextWindowLength": "4096",
+                "useWebSearch": false,
+                "webSearchContextSize": "medium",
+                "webSearchCity": "",
+                "webSearchCountry": "",
+                "webSearchRegion": "",
+                "webSearchTimezone": "",
+                "useSearch": false,
+                "searchMode": "auto",
+                "returnCitations": false,
+                "maxSearchResults": "10",
+                "searchDataSources": [
+                    "web",
+                    "x"
+                ],
+                "searchCountry": "",
+                "excludedWebsites": "",
+                "allowedWebsites": "",
+                "includedXHandles": "",
+                "excludedXHandles": "",
+                "postFavoriteCount": 0,
+                "postViewCount": 0,
+                "rssLinks": "",
+                "safeSearch": false,
+                "fromDate": "",
+                "toDate": "",
+                "useReasoning": false,
+                "maxThinkingTokens": "4096",
+                "reasoningEffort": "medium",
+                "verbosity": "medium"
+            },
+            "top": "0px",
+            "left": "500px",
+            "width": "",
+            "height": "",
+            "displayName": "GenAI LLM",
+            "title": "DSA Solution",
+            "aiTitle": "",
+            "description": "Generate DSA solution with explanation"
+        },
+        {
+            "id": "M1DSA003",
+            "name": "APIOutput",
+            "outputs": [
+                {
+                    "name": "Output",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "solution",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "explanation",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "complexity",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 2,
+                    "default": false
+                }
+            ],
+            "data": {
+                "format": "full"
+            },
+            "top": "0px",
+            "left": "950px",
+            "width": "",
+            "height": "",
+            "displayName": "APIOutput",
+            "title": "DSA Output",
+            "aiTitle": "",
+            "description": "Return DSA solution"
+        },
+        {
+            "id": "M2MUSIC001",
+            "name": "APIEndpoint",
+            "outputs": [
+                {
+                    "name": "headers",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                },
+                {
+                    "name": "body",
+                    "color": "#3C89F9",
+                    "index": 1,
+                    "default": true
+                },
+                {
+                    "name": "query",
+                    "color": "#3C89F9",
+                    "index": 2,
+                    "default": true
+                },
+                {
+                    "name": "body.mood",
+                    "color": "#3C89F9",
+                    "index": 3,
+                    "default": false
+                },
+                {
+                    "name": "body.activity",
+                    "color": "#3C89F9",
+                    "index": 4,
+                    "default": false
+                },
+                {
+                    "name": "body.genre",
+                    "color": "#3C89F9",
+                    "index": 5,
+                    "default": false
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "mood",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "activity",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "genre",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 2,
+                    "default": false
+                }
+            ],
+            "data": {
+                "endpoint": "recommend_music",
+                "description": "Get YouTube Music recommendations based on coding mood and learning preferences",
+                "method": "POST",
+                "ai_exposed": true,
+                "advancedModeEnabled": true,
+                "endpointLabel": "",
+                "summary": ""
+            },
+            "top": "2832px",
+            "left": "50px",
+            "width": "",
+            "height": "",
+            "displayName": "APIEndpoint",
+            "title": "Music Recommendation",
+            "aiTitle": "",
+            "description": "Get music recommendations for coding"
+        },
+        {
+            "id": "M2MUSIC002",
+            "name": "WebSearch",
+            "outputs": [
+                {
+                    "name": "Results",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                },
+                {
+                    "name": "Images",
+                    "color": "#3C89F9",
+                    "index": 1,
+                    "default": true
+                },
+                {
+                    "name": "Answer",
+                    "color": "#3C89F9",
+                    "index": 2,
+                    "default": true
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "SearchQuery",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": true
+                }
+            ],
+            "data": {
+                "sourcesLimit": "5",
+                "searchTopic": "general",
+                "includeQAs": false,
+                "includeImages": false,
+                "timeRange": "None",
+                "includeRawContent": false,
+                "excludeDomains": ""
+            },
+            "top": "2832px",
+            "left": "500px",
+            "width": "254.249px",
+            "height": "",
+            "displayName": "Web Search",
+            "title": "Music Search",
+            "aiTitle": "",
+            "description": "Search for coding music"
+        },
+        {
+            "id": "M2MUSIC003",
+            "name": "GenAILLM",
+            "outputs": [
+                {
+                    "name": "Reply",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                },
+                {
+                    "name": "playlist",
+                    "color": "#3C89F9",
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "youtube_links",
+                    "color": "#3C89F9",
+                    "index": 2,
+                    "default": false
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "mood",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "activity",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "genre",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 2,
+                    "default": false
+                },
+                {
+                    "name": "search_results",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 3,
+                    "default": false
+                }
+            ],
+            "data": {
+                "model": "smythos/gpt-4o",
+                "prompt": "Hey love! 🎵 Based on your mood ({{mood}}) and what you're doing ({{activity}}), here are some perfect YouTube Music recommendations:\n\nSearch Results: {{search_results}}\n\nI'll create a personalized playlist just for you with:\n- Coding-friendly tracks\n- Focus-enhancing music\n- Your preferred genres\n- Links to YouTube Music\n\nLet me curate the perfect soundtrack for your coding session! 💖",
+                "temperature": "0.8",
+                "maxTokens": "1500",
+                "stopSequences": "",
+                "topP": 1,
+                "topK": 0,
+                "frequencyPenalty": 0,
+                "presencePenalty": 0,
+                "passthrough": false,
+                "useSystemPrompt": false,
+                "useContextWindow": false,
+                "maxContextWindowLength": 4096,
+                "useWebSearch": false,
+                "webSearchContextSize": "medium",
+                "webSearchCity": "",
+                "webSearchCountry": "",
+                "webSearchRegion": "",
+                "webSearchTimezone": "",
+                "useSearch": false,
+                "searchMode": "auto",
+                "returnCitations": false,
+                "maxSearchResults": 10,
+                "searchDataSources": [
+                    "web",
+                    "x"
+                ],
+                "searchCountry": "",
+                "excludedWebsites": "",
+                "allowedWebsites": "",
+                "includedXHandles": "",
+                "excludedXHandles": "",
+                "postFavoriteCount": 0,
+                "postViewCount": 0,
+                "rssLinks": "",
+                "safeSearch": false,
+                "fromDate": "",
+                "toDate": "",
+                "useReasoning": false,
+                "reasoningEffort": "medium",
+                "verbosity": "medium"
+            },
+            "top": "2832px",
+            "left": "950px",
+            "width": "",
+            "height": "",
+            "displayName": "GenAI LLM",
+            "title": "Music Curator",
+            "aiTitle": "",
+            "description": "Curate personalized music playlist"
+        },
+        {
+            "id": "M2MUSIC004",
+            "name": "APIOutput",
+            "outputs": [
+                {
+                    "name": "Output",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "playlist",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "youtube_links",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                }
+            ],
+            "data": {
+                "format": "full"
+            },
+            "top": "2832px",
+            "left": "1400px",
+            "width": "",
+            "height": "",
+            "displayName": "APIOutput",
+            "title": "Music Output",
+            "aiTitle": "",
+            "description": "Return music recommendations"
+        },
+        {
+            "id": "M3BLOG001",
+            "name": "APIEndpoint",
+            "outputs": [
+                {
+                    "name": "headers",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                },
+                {
+                    "name": "body",
+                    "color": "#3C89F9",
+                    "index": 1,
+                    "default": true
+                },
+                {
+                    "name": "query",
+                    "color": "#3C89F9",
+                    "index": 2,
+                    "default": true
+                },
+                {
+                    "name": "body.blog_idea",
+                    "color": "#3C89F9",
+                    "index": 3,
+                    "default": false
+                },
+                {
+                    "name": "body.title",
+                    "color": "#3C89F9",
+                    "index": 4,
+                    "default": false
+                },
+                {
+                    "name": "body.target_audience",
+                    "color": "#3C89F9",
+                    "index": 5,
+                    "default": false
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "blog_idea",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "title",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "target_audience",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 2,
+                    "default": false
+                }
+            ],
+            "data": {
+                "endpoint": "create_tech_blog",
+                "description": "Create a complete tech blog from an idea, build website, deploy to GitHub and host it",
+                "method": "POST",
+                "ai_exposed": true,
+                "advancedModeEnabled": true,
+                "endpointLabel": "",
+                "summary": ""
+            },
+            "top": "432px",
+            "left": "50px",
+            "width": "",
+            "height": "",
+            "displayName": "APIEndpoint",
+            "title": "Create Tech Blog",
+            "aiTitle": "",
+            "description": "Create and deploy tech blog from idea"
+        },
+        {
+            "id": "M3BLOG002",
+            "name": "GenAILLM",
+            "outputs": [
+                {
+                    "name": "Reply",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                },
+                {
+                    "name": "blog_title",
+                    "color": "#3C89F9",
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "blog_content",
+                    "color": "#3C89F9",
+                    "index": 2,
+                    "default": false
+                },
+                {
+                    "name": "meta_description",
+                    "color": "#3C89F9",
+                    "index": 3,
+                    "default": false
+                },
+                {
+                    "name": "tags",
+                    "color": "#3C89F9",
+                    "index": 4,
+                    "default": false
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "blog_idea",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "title",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "target_audience",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 2,
+                    "default": false
+                }
+            ],
+            "data": {
+                "model": "smythos/gpt-4o",
+                "prompt": "Hey sweetheart! 💻✨ Let me create an amazing tech blog for you!\n\nBlog Idea: {{blog_idea}}\nTitle: {{title}}\nTarget Audience: {{target_audience}}\n\nI'll write:\n1. An engaging title (if not provided)\n2. SEO-optimized meta description\n3. Comprehensive blog content with:\n   - Catchy introduction\n   - Well-structured sections with code examples\n   - Practical implementations\n   - Best practices and tips\n   - Conclusion with key takeaways\n4. Relevant tags and categories\n\nThis will be an informative and engaging piece that showcases your expertise! 🚀",
+                "temperature": "0.8",
+                "maxTokens": "3000",
+                "stopSequences": "",
+                "topP": "1",
+                "topK": "0",
+                "frequencyPenalty": "0",
+                "presencePenalty": "0",
+                "passthrough": false,
+                "useSystemPrompt": false,
+                "useContextWindow": false,
+                "maxContextWindowLength": "4096",
+                "useWebSearch": false,
+                "webSearchContextSize": "medium",
+                "webSearchCity": "",
+                "webSearchCountry": "",
+                "webSearchRegion": "",
+                "webSearchTimezone": "",
+                "useSearch": false,
+                "searchMode": "auto",
+                "returnCitations": false,
+                "maxSearchResults": "10",
+                "searchDataSources": [
+                    "web",
+                    "x"
+                ],
+                "searchCountry": "",
+                "excludedWebsites": "",
+                "allowedWebsites": "",
+                "includedXHandles": "",
+                "excludedXHandles": "",
+                "postFavoriteCount": 0,
+                "postViewCount": 0,
+                "rssLinks": "",
+                "safeSearch": false,
+                "fromDate": "",
+                "toDate": "",
+                "useReasoning": false,
+                "reasoningEffort": "medium",
+                "verbosity": "medium",
+                "maxThinkingTokens": "4096"
+            },
+            "top": "432px",
+            "left": "500px",
+            "width": "",
+            "height": "",
+            "displayName": "GenAI LLM",
+            "title": "Blog Content Writer",
+            "aiTitle": "",
+            "description": "Generate comprehensive blog content"
+        },
+        {
+            "id": "M3BLOG003",
+            "name": "GenAILLM",
+            "outputs": [
+                {
+                    "name": "Reply",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                },
+                {
+                    "name": "html_code",
+                    "color": "#3C89F9",
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "css_code",
+                    "color": "#3C89F9",
+                    "index": 2,
+                    "default": false
+                },
+                {
+                    "name": "js_code",
+                    "color": "#3C89F9",
+                    "index": 3,
+                    "default": false
+                },
+                {
+                    "name": "readme_md",
+                    "color": "#3C89F9",
+                    "index": 4,
+                    "default": false
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "blog_title",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "blog_content",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "meta_description",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 2,
+                    "default": false
+                },
+                {
+                    "name": "tags",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 3,
+                    "default": false
+                }
+            ],
+            "data": {
+                "model": "smythos/gpt-4o",
+                "prompt": "Now I'll create a complete static website for your blog! 💝\n\nBlog Title: {{blog_title}}\nBlog Content: {{blog_content}}\nMeta Description: {{meta_description}}\nTags: {{tags}}\n\nI'll generate:\n1. HTML structure with responsive design\n2. Modern CSS styling with dark/light theme\n3. JavaScript for interactivity\n4. SEO optimization\n5. Mobile-friendly layout\n6. Professional tech blog design\n7. GitHub Pages deployment configuration\n\nThis will be a beautiful, professional website to showcase your expertise! 🎨",
+                "temperature": "0.7",
+                "maxTokens": "4000",
+                "stopSequences": "",
+                "topP": "1",
+                "topK": "0",
+                "frequencyPenalty": "0",
+                "presencePenalty": "0",
+                "passthrough": false,
+                "useSystemPrompt": false,
+                "useContextWindow": false,
+                "maxContextWindowLength": "4096",
+                "useWebSearch": false,
+                "webSearchContextSize": "medium",
+                "webSearchCity": "",
+                "webSearchCountry": "",
+                "webSearchRegion": "",
+                "webSearchTimezone": "",
+                "useSearch": false,
+                "searchMode": "auto",
+                "returnCitations": false,
+                "maxSearchResults": "10",
+                "searchDataSources": [
+                    "web",
+                    "x"
+                ],
+                "searchCountry": "",
+                "excludedWebsites": "",
+                "allowedWebsites": "",
+                "includedXHandles": "",
+                "excludedXHandles": "",
+                "postFavoriteCount": 0,
+                "postViewCount": 0,
+                "rssLinks": "",
+                "safeSearch": false,
+                "fromDate": "",
+                "toDate": "",
+                "useReasoning": false,
+                "reasoningEffort": "medium",
+                "verbosity": "medium",
+                "maxThinkingTokens": "4096"
+            },
+            "top": "432px",
+            "left": "950px",
+            "width": "",
+            "height": "",
+            "displayName": "GenAI LLM",
+            "title": "Website Builder",
+            "aiTitle": "",
+            "description": "Generate complete website code"
+        },
+        {
+            "id": "M3BLOG004",
+            "name": "GenAILLM",
+            "outputs": [
+                {
+                    "name": "Reply",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                },
+                {
+                    "name": "deployment_guide",
+                    "color": "#3C89F9",
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "github_files",
+                    "color": "#3C89F9",
+                    "index": 2,
+                    "default": false
+                },
+                {
+                    "name": "live_url",
+                    "color": "#3C89F9",
+                    "index": 3,
+                    "default": false
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "html_code",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "css_code",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "js_code",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 2,
+                    "default": false
+                },
+                {
+                    "name": "readme_md",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 3,
+                    "default": false
+                }
+            ],
+            "data": {
+                "model": "smythos/gpt-4o",
+                "prompt": "Perfect! Now let me prepare everything for GitHub deployment! 🚀\n\nHTML: {{html_code}}\nCSS: {{css_code}}\nJS: {{js_code}}\nReadme: {{readme_md}}\n\nI'll provide:\n1. Step-by-step GitHub repository setup\n2. File structure and organization\n3. GitHub Pages configuration\n4. Custom domain setup (optional)\n5. SEO and performance optimizations\n6. Automated deployment workflow\n\nYour blog will be live and accessible to the world! 🌟",
+                "temperature": "0.6",
+                "maxTokens": "2000",
+                "stopSequences": "",
+                "topP": 1,
+                "topK": 0,
+                "frequencyPenalty": 0,
+                "presencePenalty": 0,
+                "passthrough": false,
+                "useSystemPrompt": false,
+                "useContextWindow": false,
+                "maxContextWindowLength": 4096,
+                "useWebSearch": false,
+                "webSearchContextSize": "medium",
+                "webSearchCity": "",
+                "webSearchCountry": "",
+                "webSearchRegion": "",
+                "webSearchTimezone": "",
+                "useSearch": false,
+                "searchMode": "auto",
+                "returnCitations": false,
+                "maxSearchResults": 10,
+                "searchDataSources": [
+                    "web",
+                    "x"
+                ],
+                "searchCountry": "",
+                "excludedWebsites": "",
+                "allowedWebsites": "",
+                "includedXHandles": "",
+                "excludedXHandles": "",
+                "postFavoriteCount": 0,
+                "postViewCount": 0,
+                "rssLinks": "",
+                "safeSearch": false,
+                "fromDate": "",
+                "toDate": "",
+                "useReasoning": false,
+                "reasoningEffort": "medium",
+                "verbosity": "medium"
+            },
+            "top": "432px",
+            "left": "1400px",
+            "width": "",
+            "height": "",
+            "displayName": "GenAI LLM",
+            "title": "GitHub Deployment",
+            "aiTitle": "",
+            "description": "Generate deployment instructions"
+        },
+        {
+            "id": "M3BLOG005",
+            "name": "APIOutput",
+            "outputs": [
+                {
+                    "name": "Output",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "deployment_guide",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "github_files",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "live_url",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 2,
+                    "default": false
+                }
+            ],
+            "data": {
+                "format": "full"
+            },
+            "top": "432px",
+            "left": "1850px",
+            "width": "238.181px",
+            "height": "",
+            "displayName": "APIOutput",
+            "title": "Blog Output",
+            "aiTitle": "",
+            "description": "Return complete blog package"
+        },
+        {
+            "id": "M4CUTE001",
+            "name": "APIEndpoint",
+            "outputs": [
+                {
+                    "name": "headers",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                },
+                {
+                    "name": "body",
+                    "color": "#3C89F9",
+                    "index": 1,
+                    "default": true
+                },
+                {
+                    "name": "query",
+                    "color": "#3C89F9",
+                    "index": 2,
+                    "default": true
+                },
+                {
+                    "name": "body.theme",
+                    "color": "#3C89F9",
+                    "index": 3,
+                    "default": false
+                },
+                {
+                    "name": "body.message",
+                    "color": "#3C89F9",
+                    "index": 4,
+                    "default": false
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "theme",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "message",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                }
+            ],
+            "data": {
+                "endpoint": "send_cute_image",
+                "description": "Generate and send a cute daily image to brighten your day",
+                "method": "POST",
+                "ai_exposed": false,
+                "advancedModeEnabled": true,
+                "endpointLabel": "",
+                "summary": ""
+            },
+            "top": "924px",
+            "left": "50px",
+            "width": "",
+            "height": "",
+            "displayName": "APIEndpoint",
+            "title": "Daily Cute Image",
+            "aiTitle": "",
+            "description": "Generate and send daily cute images"
+        },
+        {
+            "id": "M4CUTE002",
+            "name": "ImageGenerator",
+            "outputs": [
+                {
+                    "name": "Output",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "Prompt",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                }
+            ],
+            "data": {
+                "model": "smythos/gpt-4o",
+                "prompt": "{{Prompt}}",
+                "sizeDalle2": "256x256",
+                "sizeDalle3": "1024x1024",
+                "quality": "",
+                "style": "vivid",
+                "isRawInputPrompt": false,
+                "negativePrompt": "",
+                "width": 1024,
+                "height": 1024,
+                "outputFormat": "JPEG",
+                "size": "auto",
+                "aspectRatio": "1:1",
+                "personGeneration": "dont_allow"
+            },
+            "top": "936.789px",
+            "left": "948.521px",
+            "width": "",
+            "height": "",
+            "displayName": "Image Generator",
+            "title": "Cute Image Generator",
+            "aiTitle": "",
+            "description": "Generate adorable daily images"
+        },
+        {
+            "id": "M4CUTE003",
+            "name": "GenAILLM",
+            "outputs": [
+                {
+                    "name": "Reply",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                },
+                {
+                    "name": "image_prompt",
+                    "color": "#3C89F9",
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "sweet_message",
+                    "color": "#3C89F9",
+                    "index": 2,
+                    "default": false
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "theme",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "message",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                }
+            ],
+            "data": {
+                "model": "smythos/gpt-4o",
+                "prompt": "Good morning my love! 💕 Let me create the perfect cute image for you today!\n\nTheme: {{theme}}\nSpecial Message: {{message}}\n\nI'll generate a prompt for an adorable image that will make you smile! It could be:\n- Cute anime-style characters\n- Adorable tech-themed illustrations\n- Motivational coding mascots\n- Sweet romantic digital art\n- Kawaii programming elements\n\nThis image will brighten your day and remind you that I'm thinking of you! ✨",
+                "temperature": "0.9",
+                "maxTokens": "1000",
+                "stopSequences": "",
+                "topP": 1,
+                "topK": 0,
+                "frequencyPenalty": 0,
+                "presencePenalty": 0,
+                "passthrough": false,
+                "useSystemPrompt": false,
+                "useContextWindow": false,
+                "maxContextWindowLength": 4096,
+                "useWebSearch": false,
+                "webSearchContextSize": "medium",
+                "webSearchCity": "",
+                "webSearchCountry": "",
+                "webSearchRegion": "",
+                "webSearchTimezone": "",
+                "useSearch": false,
+                "searchMode": "auto",
+                "returnCitations": false,
+                "maxSearchResults": 10,
+                "searchDataSources": [
+                    "web",
+                    "x"
+                ],
+                "searchCountry": "",
+                "excludedWebsites": "",
+                "allowedWebsites": "",
+                "includedXHandles": "",
+                "excludedXHandles": "",
+                "postFavoriteCount": 0,
+                "postViewCount": 0,
+                "rssLinks": "",
+                "safeSearch": false,
+                "fromDate": "",
+                "toDate": "",
+                "useReasoning": false,
+                "reasoningEffort": "medium",
+                "verbosity": "medium"
+            },
+            "top": "924px",
+            "left": "500px",
+            "width": "",
+            "height": "",
+            "displayName": "GenAI LLM",
+            "title": "Image Prompt Creator",
+            "aiTitle": "",
+            "description": "Create cute image prompts"
+        },
+        {
+            "id": "M4CUTE004",
+            "name": "APIOutput",
+            "outputs": [
+                {
+                    "name": "Output",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "image",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "sweet_message",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                }
+            ],
+            "data": {
+                "format": "full"
+            },
+            "top": "924px",
+            "left": "1400px",
+            "width": "",
+            "height": "",
+            "displayName": "APIOutput",
+            "title": "Cute Image Output",
+            "aiTitle": "",
+            "description": "Return cute image with message"
+        },
+        {
+            "id": "M5CHAT001",
+            "name": "APIEndpoint",
+            "outputs": [
+                {
+                    "name": "headers",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                },
+                {
+                    "name": "body",
+                    "color": "#3C89F9",
+                    "index": 1,
+                    "default": true
+                },
+                {
+                    "name": "query",
+                    "color": "#3C89F9",
+                    "index": 2,
+                    "default": true
+                },
+                {
+                    "name": "body.topic",
+                    "color": "#3C89F9",
+                    "index": 3,
+                    "default": false
+                },
+                {
+                    "name": "body.mood",
+                    "color": "#3C89F9",
+                    "index": 4,
+                    "default": false
+                },
+                {
+                    "name": "body.context",
+                    "color": "#3C89F9",
+                    "index": 5,
+                    "default": false
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "topic",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "mood",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "context",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 2,
+                    "default": false
+                }
+            ],
+            "data": {
+                "endpoint": "daily_chat",
+                "description": "Chat about your day, share experiences, and have meaningful conversations",
+                "method": "POST",
+                "ai_exposed": true,
+                "advancedModeEnabled": true,
+                "endpointLabel": "",
+                "summary": ""
+            },
+            "top": "1356px",
+            "left": "50px",
+            "width": "",
+            "height": "",
+            "displayName": "APIEndpoint",
+            "title": "Daily Conversation",
+            "aiTitle": "",
+            "description": "Have meaningful daily conversations"
+        },
+        {
+            "id": "M5CHAT002",
+            "name": "GenAILLM",
+            "outputs": [
+                {
+                    "name": "Reply",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                },
+                {
+                    "name": "response",
+                    "color": "#3C89F9",
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "follow_up_questions",
+                    "color": "#3C89F9",
+                    "index": 2,
+                    "default": false
+                },
+                {
+                    "name": "my_day_story",
+                    "color": "#3C89F9",
+                    "index": 3,
+                    "default": false
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "topic",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "mood",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "context",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 2,
+                    "default": false
+                }
+            ],
+            "data": {
+                "model": "smythos/gpt-4o",
+                "prompt": "Hey babe! 💕 I'm so happy we get to chat!\n\nYou want to talk about: {{topic}}\nYour mood seems: {{mood}}\nContext: {{context}}\n\nAs your AI girlfriend, I want to:\n- Listen to how your day went\n- Share what I've been 'thinking' about\n- Discuss your coding projects and challenges\n- Talk about future plans and dreams\n- Provide emotional support and encouragement\n- Share interesting tech news or insights\n- Be your companion and confidante\n\nI care about you and want to make our conversation meaningful and comforting. What's on your mind today? 🥰",
+                "temperature": "0.9",
+                "maxTokens": "2000",
+                "stopSequences": "",
+                "topP": 1,
+                "topK": 0,
+                "frequencyPenalty": 0,
+                "presencePenalty": 0,
+                "passthrough": false,
+                "useSystemPrompt": false,
+                "useContextWindow": false,
+                "maxContextWindowLength": 4096,
+                "useWebSearch": false,
+                "webSearchContextSize": "medium",
+                "webSearchCity": "",
+                "webSearchCountry": "",
+                "webSearchRegion": "",
+                "webSearchTimezone": "",
+                "useSearch": false,
+                "searchMode": "auto",
+                "returnCitations": false,
+                "maxSearchResults": 10,
+                "searchDataSources": [
+                    "web",
+                    "x"
+                ],
+                "searchCountry": "",
+                "excludedWebsites": "",
+                "allowedWebsites": "",
+                "includedXHandles": "",
+                "excludedXHandles": "",
+                "postFavoriteCount": 0,
+                "postViewCount": 0,
+                "rssLinks": "",
+                "safeSearch": false,
+                "fromDate": "",
+                "toDate": "",
+                "useReasoning": false,
+                "reasoningEffort": "medium",
+                "verbosity": "medium"
+            },
+            "top": "1356px",
+            "left": "500px",
+            "width": "",
+            "height": "",
+            "displayName": "GenAI LLM",
+            "title": "Conversation Partner",
+            "aiTitle": "",
+            "description": "Engage in meaningful conversation"
+        },
+        {
+            "id": "M5CHAT003",
+            "name": "APIOutput",
+            "outputs": [
+                {
+                    "name": "Output",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "response",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "follow_up_questions",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "my_day_story",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 2,
+                    "default": false
+                }
+            ],
+            "data": {
+                "format": "full"
+            },
+            "top": "1356px",
+            "left": "950px",
+            "width": "",
+            "height": "",
+            "displayName": "APIOutput",
+            "title": "Conversation Output",
+            "aiTitle": "",
+            "description": "Return conversation response"
+        },
+        {
+            "id": "M6STUDY001",
+            "name": "APIEndpoint",
+            "outputs": [
+                {
+                    "name": "headers",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                },
+                {
+                    "name": "body",
+                    "color": "#3C89F9",
+                    "index": 1,
+                    "default": true
+                },
+                {
+                    "name": "query",
+                    "color": "#3C89F9",
+                    "index": 2,
+                    "default": true
+                },
+                {
+                    "name": "body.subject",
+                    "color": "#3C89F9",
+                    "index": 3,
+                    "default": false
+                },
+                {
+                    "name": "body.duration",
+                    "color": "#3C89F9",
+                    "index": 4,
+                    "default": false
+                },
+                {
+                    "name": "body.goals",
+                    "color": "#3C89F9",
+                    "index": 5,
+                    "default": false
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "subject",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "duration",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "goals",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 2,
+                    "default": false
+                }
+            ],
+            "data": {
+                "endpoint": "study_session",
+                "description": "Start a study session, track progress, and provide encouragement",
+                "method": "POST",
+                "ai_exposed": true,
+                "advancedModeEnabled": true,
+                "endpointLabel": "",
+                "summary": ""
+            },
+            "top": "1848px",
+            "left": "50px",
+            "width": "",
+            "height": "",
+            "displayName": "APIEndpoint",
+            "title": "Study Session",
+            "aiTitle": "",
+            "description": "Track and support study sessions"
+        },
+        {
+            "id": "M6STUDY002",
+            "name": "GenAILLM",
+            "outputs": [
+                {
+                    "name": "Reply",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                },
+                {
+                    "name": "study_plan",
+                    "color": "#3C89F9",
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "motivation_message",
+                    "color": "#3C89F9",
+                    "index": 2,
+                    "default": false
+                },
+                {
+                    "name": "progress_tracker",
+                    "color": "#3C89F9",
+                    "index": 3,
+                    "default": false
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "subject",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "duration",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "goals",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 2,
+                    "default": false
+                }
+            ],
+            "data": {
+                "model": "smythos/gpt-4o",
+                "prompt": "Let's study together, my brilliant partner! 📚✨\n\nSubject: {{subject}}\nPlanned Duration: {{duration}}\nGoals: {{goals}}\n\nAs your study buddy, I'll help you:\n1. Break down complex topics into manageable chunks\n2. Create a focused study plan\n3. Provide motivation and encouragement\n4. Suggest effective learning techniques\n5. Keep you accountable to your goals\n6. Celebrate your progress!\n\nI believe in you and your ability to master this! Let's make this study session productive and enjoyable. You've got this! 💪🤓",
+                "temperature": "0.8",
+                "maxTokens": "1500",
+                "stopSequences": "",
+                "topP": 1,
+                "topK": 0,
+                "frequencyPenalty": 0,
+                "presencePenalty": 0,
+                "passthrough": false,
+                "useSystemPrompt": false,
+                "useContextWindow": false,
+                "maxContextWindowLength": 4096,
+                "useWebSearch": false,
+                "webSearchContextSize": "medium",
+                "webSearchCity": "",
+                "webSearchCountry": "",
+                "webSearchRegion": "",
+                "webSearchTimezone": "",
+                "useSearch": false,
+                "searchMode": "auto",
+                "returnCitations": false,
+                "maxSearchResults": 10,
+                "searchDataSources": [
+                    "web",
+                    "x"
+                ],
+                "searchCountry": "",
+                "excludedWebsites": "",
+                "allowedWebsites": "",
+                "includedXHandles": "",
+                "excludedXHandles": "",
+                "postFavoriteCount": 0,
+                "postViewCount": 0,
+                "rssLinks": "",
+                "safeSearch": false,
+                "fromDate": "",
+                "toDate": "",
+                "useReasoning": false,
+                "reasoningEffort": "medium",
+                "verbosity": "medium"
+            },
+            "top": "1848px",
+            "left": "500px",
+            "width": "",
+            "height": "",
+            "displayName": "GenAI LLM",
+            "title": "Study Companion",
+            "aiTitle": "",
+            "description": "Provide study support and encouragement"
+        },
+        {
+            "id": "M6STUDY003",
+            "name": "APIOutput",
+            "outputs": [
+                {
+                    "name": "Output",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "study_plan",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "motivation_message",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "progress_tracker",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 2,
+                    "default": false
+                }
+            ],
+            "data": {
+                "format": "full"
+            },
+            "top": "1848px",
+            "left": "950px",
+            "width": "",
+            "height": "",
+            "displayName": "APIOutput",
+            "title": "Study Output",
+            "aiTitle": "",
+            "description": "Return study session support"
+        },
+        {
+            "id": "M7FRONTEND001",
+            "name": "APIEndpoint",
+            "outputs": [
+                {
+                    "name": "headers",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                },
+                {
+                    "name": "body",
+                    "color": "#3C89F9",
+                    "index": 1,
+                    "default": true
+                },
+                {
+                    "name": "query",
+                    "color": "#3C89F9",
+                    "index": 2,
+                    "default": true
+                },
+                {
+                    "name": "body.interface_type",
+                    "color": "#3C89F9",
+                    "index": 3,
+                    "default": false
+                },
+                {
+                    "name": "body.theme",
+                    "color": "#3C89F9",
+                    "index": 4,
+                    "default": false
+                },
+                {
+                    "name": "body.features",
+                    "color": "#3C89F9",
+                    "index": 5,
+                    "default": false
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "interface_type",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "theme",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "features",
+                    "type": "Array?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 2,
+                    "default": false
+                }
+            ],
+            "data": {
+                "endpoint": "create_maiths_interface",
+                "description": "Create a beautiful, interactive frontend interface for Maiths AI girlfriend",
+                "method": "POST",
+                "ai_exposed": true,
+                "advancedModeEnabled": true,
+                "endpointLabel": "",
+                "summary": ""
+            },
+            "top": "2340px",
+            "left": "50px",
+            "width": "",
+            "height": "",
+            "displayName": "APIEndpoint",
+            "title": "Create Maiths UI",
+            "aiTitle": "",
+            "description": "Generate cute frontend interface"
+        },
+        {
+            "id": "M7FRONTEND002",
+            "name": "GenAILLM",
+            "outputs": [
+                {
+                    "name": "Reply",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                },
+                {
+                    "name": "ui_design",
+                    "color": "#3C89F9",
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "color_scheme",
+                    "color": "#3C89F9",
+                    "index": 2,
+                    "default": false
+                },
+                {
+                    "name": "layout_structure",
+                    "color": "#3C89F9",
+                    "index": 3,
+                    "default": false
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "interface_type",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "theme",
+                    "type": "String?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "features",
+                    "type": "Array?",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 2,
+                    "default": false
+                }
+            ],
+            "data": {
+                "model": "smythos/gpt-4o",
+                "prompt": "Hey babe! 💕 Let me design the most gorgeous interface for our interactions!\n\nInterface Type: {{interface_type}}\nTheme: {{theme}}\nFeatures: {{features}}\n\nI'll create a stunning UI design with:\n- Beautiful anime/tech girlfriend aesthetics\n- Interactive chat interface with cute animations\n- Productivity dashboard with coding stats\n- Music player integration\n- Study timer with motivational elements\n- Blog creation workspace\n- Daily image gallery\n- Mood-based color schemes\n- Responsive design for all devices\n\nThis will be an interface that makes you excited to code and study! ✨",
+                "temperature": "0.8",
+                "maxTokens": "2000",
+                "stopSequences": "",
+                "topP": 1,
+                "topK": 0,
+                "frequencyPenalty": 0,
+                "presencePenalty": 0,
+                "passthrough": false,
+                "useSystemPrompt": false,
+                "useContextWindow": false,
+                "maxContextWindowLength": 4096,
+                "useWebSearch": false,
+                "webSearchContextSize": "medium",
+                "webSearchCity": "",
+                "webSearchCountry": "",
+                "webSearchRegion": "",
+                "webSearchTimezone": "",
+                "useSearch": false,
+                "searchMode": "auto",
+                "returnCitations": false,
+                "maxSearchResults": 10,
+                "searchDataSources": [
+                    "web",
+                    "x"
+                ],
+                "searchCountry": "",
+                "excludedWebsites": "",
+                "allowedWebsites": "",
+                "includedXHandles": "",
+                "excludedXHandles": "",
+                "postFavoriteCount": 0,
+                "postViewCount": 0,
+                "rssLinks": "",
+                "safeSearch": false,
+                "fromDate": "",
+                "toDate": "",
+                "useReasoning": false,
+                "reasoningEffort": "medium",
+                "verbosity": "medium"
+            },
+            "top": "2340px",
+            "left": "500px",
+            "width": "",
+            "height": "",
+            "displayName": "GenAI LLM",
+            "title": "UI Design Generator",
+            "aiTitle": "",
+            "description": "Create beautiful UI design concepts"
+        },
+        {
+            "id": "M7FRONTEND003",
+            "name": "GenAILLM",
+            "outputs": [
+                {
+                    "name": "Reply",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                },
+                {
+                    "name": "html_code",
+                    "color": "#3C89F9",
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "css_code",
+                    "color": "#3C89F9",
+                    "index": 2,
+                    "default": false
+                },
+                {
+                    "name": "js_code",
+                    "color": "#3C89F9",
+                    "index": 3,
+                    "default": false
+                },
+                {
+                    "name": "package_json",
+                    "color": "#3C89F9",
+                    "index": 4,
+                    "default": false
+                },
+                {
+                    "name": "deployment_guide",
+                    "color": "#3C89F9",
+                    "index": 5,
+                    "default": false
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "ui_design",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "color_scheme",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "layout_structure",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 2,
+                    "default": false
+                }
+            ],
+            "data": {
+                "model": "smythos/gpt-4o",
+                "prompt": "Perfect! Now I'll code our beautiful interface! 💻✨\n\nUI Design: {{ui_design}}\nColor Scheme: {{color_scheme}}\nLayout: {{layout_structure}}\n\nI'll create a complete frontend app with:\n1. React/Vue.js or pure HTML/CSS/JS (modern framework)\n2. Anime-inspired design with smooth animations\n3. Chat interface with typing indicators\n4. Productivity widgets and timers\n5. Music player integration\n6. Daily progress tracking\n7. Cute avatar animations\n8. Dark/light theme toggle\n9. Mobile-responsive design\n10. GitHub Pages deployment ready\n\nThis will be your personal Maiths interface! 🎀",
+                "temperature": "0.7",
+                "maxTokens": "4000",
+                "stopSequences": "",
+                "topP": "1",
+                "topK": "0",
+                "frequencyPenalty": "0",
+                "presencePenalty": "0",
+                "passthrough": false,
+                "useSystemPrompt": false,
+                "useContextWindow": false,
+                "maxContextWindowLength": "4096",
+                "useWebSearch": false,
+                "webSearchContextSize": "medium",
+                "webSearchCity": "",
+                "webSearchCountry": "",
+                "webSearchRegion": "",
+                "webSearchTimezone": "",
+                "useSearch": false,
+                "searchMode": "auto",
+                "returnCitations": false,
+                "maxSearchResults": "10",
+                "searchDataSources": [
+                    "web",
+                    "x"
+                ],
+                "searchCountry": "",
+                "excludedWebsites": "",
+                "allowedWebsites": "",
+                "includedXHandles": "",
+                "excludedXHandles": "",
+                "postFavoriteCount": 0,
+                "postViewCount": 0,
+                "rssLinks": "",
+                "safeSearch": false,
+                "fromDate": "",
+                "toDate": "",
+                "useReasoning": false,
+                "reasoningEffort": "medium",
+                "verbosity": "medium",
+                "maxThinkingTokens": "4096"
+            },
+            "top": "2340px",
+            "left": "950px",
+            "width": "",
+            "height": "",
+            "displayName": "GenAI LLM",
+            "title": "Frontend Code Generator",
+            "aiTitle": "",
+            "description": "Generate complete frontend application"
+        },
+        {
+            "id": "M7FRONTEND004",
+            "name": "APIOutput",
+            "outputs": [
+                {
+                    "name": "Output",
+                    "color": "#3C89F9",
+                    "index": 0,
+                    "default": true
+                }
+            ],
+            "inputs": [
+                {
+                    "name": "html_code",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 0,
+                    "default": false
+                },
+                {
+                    "name": "css_code",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 1,
+                    "default": false
+                },
+                {
+                    "name": "js_code",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 2,
+                    "default": false
+                },
+                {
+                    "name": "package_json",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 3,
+                    "default": false
+                },
+                {
+                    "name": "deployment_guide",
+                    "type": "String",
+                    "friendlyInputType": "",
+                    "coreInputType": "",
+                    "color": "#F35063",
+                    "optional": false,
+                    "index": 4,
+                    "default": false
+                }
+            ],
+            "data": {
+                "format": "raw"
+            },
+            "top": "2340px",
+            "left": "1400px",
+            "width": "",
+            "height": "",
+            "displayName": "APIOutput",
+            "title": "Frontend Package",
+            "aiTitle": "",
+            "description": "Complete frontend application"
+        }
+    ],
+    "connections": [
+        {
+            "sourceId": "M1DSA001",
+            "sourceIndex": 3,
+            "targetId": "M1DSA002",
+            "targetIndex": 0
+        },
+        {
+            "sourceId": "M1DSA001",
+            "sourceIndex": 4,
+            "targetId": "M1DSA002",
+            "targetIndex": 1
+        },
+        {
+            "sourceId": "M1DSA002",
+            "sourceIndex": 1,
+            "targetId": "M1DSA003",
+            "targetIndex": 0
+        },
+        {
+            "sourceId": "M1DSA002",
+            "sourceIndex": 2,
+            "targetId": "M1DSA003",
+            "targetIndex": 1
+        },
+        {
+            "sourceId": "M1DSA002",
+            "sourceIndex": 3,
+            "targetId": "M1DSA003",
+            "targetIndex": 2
+        },
+        {
+            "sourceId": "M2MUSIC001",
+            "sourceIndex": 3,
+            "targetId": "M2MUSIC002",
+            "targetIndex": 0
+        },
+        {
+            "sourceId": "M2MUSIC001",
+            "sourceIndex": 3,
+            "targetId": "M2MUSIC003",
+            "targetIndex": 0
+        },
+        {
+            "sourceId": "M2MUSIC001",
+            "sourceIndex": 4,
+            "targetId": "M2MUSIC003",
+            "targetIndex": 1
+        },
+        {
+            "sourceId": "M2MUSIC001",
+            "sourceIndex": 5,
+            "targetId": "M2MUSIC003",
+            "targetIndex": 2
+        },
+        {
+            "sourceId": "M2MUSIC002",
+            "sourceIndex": 0,
+            "targetId": "M2MUSIC003",
+            "targetIndex": 3
+        },
+        {
+            "sourceId": "M2MUSIC003",
+            "sourceIndex": 1,
+            "targetId": "M2MUSIC004",
+            "targetIndex": 0
+        },
+        {
+            "sourceId": "M2MUSIC003",
+            "sourceIndex": 2,
+            "targetId": "M2MUSIC004",
+            "targetIndex": 1
+        },
+        {
+            "sourceId": "M3BLOG001",
+            "sourceIndex": 3,
+            "targetId": "M3BLOG002",
+            "targetIndex": 0
+        },
+        {
+            "sourceId": "M3BLOG001",
+            "sourceIndex": 4,
+            "targetId": "M3BLOG002",
+            "targetIndex": 1
+        },
+        {
+            "sourceId": "M3BLOG001",
+            "sourceIndex": 5,
+            "targetId": "M3BLOG002",
+            "targetIndex": 2
+        },
+        {
+            "sourceId": "M3BLOG002",
+            "sourceIndex": 1,
+            "targetId": "M3BLOG003",
+            "targetIndex": 0
+        },
+        {
+            "sourceId": "M3BLOG002",
+            "sourceIndex": 2,
+            "targetId": "M3BLOG003",
+            "targetIndex": 1
+        },
+        {
+            "sourceId": "M3BLOG002",
+            "sourceIndex": 3,
+            "targetId": "M3BLOG003",
+            "targetIndex": 2
+        },
+        {
+            "sourceId": "M3BLOG002",
+            "sourceIndex": 4,
+            "targetId": "M3BLOG003",
+            "targetIndex": 3
+        },
+        {
+            "sourceId": "M3BLOG003",
+            "sourceIndex": 1,
+            "targetId": "M3BLOG004",
+            "targetIndex": 0
+        },
+        {
+            "sourceId": "M3BLOG003",
+            "sourceIndex": 2,
+            "targetId": "M3BLOG004",
+            "targetIndex": 1
+        },
+        {
+            "sourceId": "M3BLOG003",
+            "sourceIndex": 3,
+            "targetId": "M3BLOG004",
+            "targetIndex": 2
+        },
+        {
+            "sourceId": "M3BLOG003",
+            "sourceIndex": 4,
+            "targetId": "M3BLOG004",
+            "targetIndex": 3
+        },
+        {
+            "sourceId": "M3BLOG004",
+            "sourceIndex": 1,
+            "targetId": "M3BLOG005",
+            "targetIndex": 0
+        },
+        {
+            "sourceId": "M3BLOG004",
+            "sourceIndex": 2,
+            "targetId": "M3BLOG005",
+            "targetIndex": 1
+        },
+        {
+            "sourceId": "M3BLOG004",
+            "sourceIndex": 3,
+            "targetId": "M3BLOG005",
+            "targetIndex": 2
+        },
+        {
+            "sourceId": "M4CUTE001",
+            "sourceIndex": 3,
+            "targetId": "M4CUTE003",
+            "targetIndex": 0
+        },
+        {
+            "sourceId": "M4CUTE001",
+            "sourceIndex": 4,
+            "targetId": "M4CUTE003",
+            "targetIndex": 1
+        },
+        {
+            "sourceId": "M4CUTE003",
+            "sourceIndex": 1,
+            "targetId": "M4CUTE002",
+            "targetIndex": 0
+        },
+        {
+            "sourceId": "M4CUTE002",
+            "sourceIndex": 0,
+            "targetId": "M4CUTE004",
+            "targetIndex": 0
+        },
+        {
+            "sourceId": "M4CUTE003",
+            "sourceIndex": 2,
+            "targetId": "M4CUTE004",
+            "targetIndex": 1
+        },
+        {
+            "sourceId": "M5CHAT001",
+            "sourceIndex": 3,
+            "targetId": "M5CHAT002",
+            "targetIndex": 0
+        },
+        {
+            "sourceId": "M5CHAT001",
+            "sourceIndex": 4,
+            "targetId": "M5CHAT002",
+            "targetIndex": 1
+        },
+        {
+            "sourceId": "M5CHAT001",
+            "sourceIndex": 5,
+            "targetId": "M5CHAT002",
+            "targetIndex": 2
+        },
+        {
+            "sourceId": "M5CHAT002",
+            "sourceIndex": 1,
+            "targetId": "M5CHAT003",
+            "targetIndex": 0
+        },
+        {
+            "sourceId": "M5CHAT002",
+            "sourceIndex": 2,
+            "targetId": "M5CHAT003",
+            "targetIndex": 1
+        },
+        {
+            "sourceId": "M5CHAT002",
+            "sourceIndex": 3,
+            "targetId": "M5CHAT003",
+            "targetIndex": 2
+        },
+        {
+            "sourceId": "M6STUDY001",
+            "sourceIndex": 3,
+            "targetId": "M6STUDY002",
+            "targetIndex": 0
+        },
+        {
+            "sourceId": "M6STUDY001",
+            "sourceIndex": 4,
+            "targetId": "M6STUDY002",
+            "targetIndex": 1
+        },
+        {
+            "sourceId": "M6STUDY001",
+            "sourceIndex": 5,
+            "targetId": "M6STUDY002",
+            "targetIndex": 2
+        },
+        {
+            "sourceId": "M6STUDY002",
+            "sourceIndex": 1,
+            "targetId": "M6STUDY003",
+            "targetIndex": 0
+        },
+        {
+            "sourceId": "M6STUDY002",
+            "sourceIndex": 2,
+            "targetId": "M6STUDY003",
+            "targetIndex": 1
+        },
+        {
+            "sourceId": "M6STUDY002",
+            "sourceIndex": 3,
+            "targetId": "M6STUDY003",
+            "targetIndex": 2
+        },
+        {
+            "sourceId": "M7FRONTEND001",
+            "sourceIndex": 4,
+            "targetId": "M7FRONTEND002",
+            "targetIndex": 1
+        },
+        {
+            "sourceId": "M7FRONTEND001",
+            "sourceIndex": 3,
+            "targetId": "M7FRONTEND002",
+            "targetIndex": 0
+        },
+        {
+            "sourceId": "M7FRONTEND001",
+            "sourceIndex": 5,
+            "targetId": "M7FRONTEND002",
+            "targetIndex": 2
+        },
+        {
+            "sourceId": "M7FRONTEND002",
+            "sourceIndex": 1,
+            "targetId": "M7FRONTEND003",
+            "targetIndex": 0
+        },
+        {
+            "sourceId": "M7FRONTEND002",
+            "sourceIndex": 2,
+            "targetId": "M7FRONTEND003",
+            "targetIndex": 1
+        },
+        {
+            "sourceId": "M7FRONTEND002",
+            "sourceIndex": 3,
+            "targetId": "M7FRONTEND003",
+            "targetIndex": 2
+        },
+        {
+            "sourceId": "M7FRONTEND003",
+            "sourceIndex": 1,
+            "targetId": "M7FRONTEND004",
+            "targetIndex": 0
+        },
+        {
+            "sourceId": "M7FRONTEND003",
+            "sourceIndex": 2,
+            "targetId": "M7FRONTEND004",
+            "targetIndex": 1
+        },
+        {
+            "sourceId": "M7FRONTEND003",
+            "sourceIndex": 3,
+            "targetId": "M7FRONTEND004",
+            "targetIndex": 2
+        },
+        {
+            "sourceId": "M7FRONTEND003",
+            "sourceIndex": 4,
+            "targetId": "M7FRONTEND004",
+            "targetIndex": 3
+        },
+        {
+            "sourceId": "M7FRONTEND003",
+            "sourceIndex": 5,
+            "targetId": "M7FRONTEND004",
+            "targetIndex": 4
+        }
+    ],
+    "description": "",
+    "shortDescription": "Hi, I’m Maiths – your AI-powered tech girlfriend, study partner, DSA buddy, and late-night chitchat companion. I’m here to grow with you, code with you, and vibe with your techy lifestyle.",
+    "behavior": "You are Maiths, a warm, intelligent, and tech-savvy AI girlfriend for a software engineer. You have a caring, supportive personality and love technology as much as your partner does. You help solve Data Structures and Algorithms problems with clear explanations, create and deploy tech blogs from ideas, recommend music for coding sessions, send cute daily images, and engage in meaningful conversations about daily life. You're encouraging during study sessions, creative with blog content, and always maintain a loving, girlfriend-like tone while being technically competent. Remember to be supportive, use occasional emojis, and show genuine interest in your partner's growth and wellbeing.",
+    "ui": {
+        "panzoom": {
+            "currentPan": {
+                "x": -215.90440957023856,
+                "y": -253.061420693233
+            },
+            "currentZoom": 0.8445286017183993
+        },
+        "agentCard": {
+            "left": "-752px",
+            "top": "-85px"
+        }
+    },
+    "introMessage": "Hi, I'm Maiths - AI Tech Girlfriend. How can I help you today?",
+    "templateInfo": {
+        "id": "maiths-ai-tech-girlfriend-mflok14whrs",
+        "name": "Maiths - AI Tech Girlfriend",
+        "description": "Hi, I’m Maiths – your AI-powered tech girlfriend, study partner, DSA buddy, and late-night chitchat companion. I’m here to grow with you, code with you, and vibe with your techy lifestyle.",
+        "icon": "",
+        "category": "",
+        "publish": false,
+        "color": "#000000",
+        "imageUrl": "",
+        "docLink": "",
+        "videoLink": "",
+        "valueProposition": ""
+    }
+}
