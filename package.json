@@ -4,10 +4,11 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "build": "cross-env BUILD=dev FORMAT=esm rollup -c ./rollup.config.js",
+    "build": "cross-env BUILD=dev FORMAT=esm rollup -c ./rollup.config.js && ./setup-production.sh",
     "start": "node web-server.js",
     "start-web": "node web-server.js",
-    "start-terminal": "node dist/index.js"
+    "start-terminal": "node web-server.js",
+    "postinstall": "./setup-production.sh"
   },
   "devDependencies": {
     "@rollup/plugin-json": "^6.1.0",
@@ -23,5 +24,8 @@
     "chalk": "^5.4.1",
     "cors": "^2.8.5",
     "express": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }

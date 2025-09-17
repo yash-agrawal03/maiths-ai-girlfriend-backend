@@ -44,18 +44,25 @@ Check out our project in action! Watch the demo video to see Maiths AI Girlfrien
    npm install
    ```
 
-3. **Configure environment**
+3. **Configure API keys**
+   ```bash
+   # Copy the vault template and add your API keys
+   cp .smyth/.sre/vault.json.example .smyth/.sre/vault.json
+   # Edit vault.json with your actual API keys
+   ```
+
+4. **Configure environment**
    ```bash
    cp .env.example .env
    # Edit .env with your settings
    ```
 
-4. **Start the server**
+5. **Start the server**
    ```bash
    npm start
    ```
 
-5. **Verify it's working**
+6. **Verify it's working**
    - API will be running on http://localhost:5000
    - Health check: http://localhost:5000/health
 

@@ -12,7 +12,11 @@ const PORT = process.env.PORT || 5000;
 
 // Enable CORS for frontend
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3001'],
+  origin: [
+    'http://localhost:3000', 
+    'http://localhost:3001',
+    'https://maiths-ai-girlfriend-frontend.vercel.app'
+  ],
   credentials: true
 }));
 
