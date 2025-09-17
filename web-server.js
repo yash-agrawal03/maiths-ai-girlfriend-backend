@@ -49,6 +49,19 @@ async function initializeAgent() {
   }
 }
 
+// Root endpoint
+app.get('/', (req, res) => {
+  res.json({
+    message: '💖 Maiths AI Girlfriend Backend API',
+    status: 'running',
+    endpoints: {
+      health: '/health',
+      chat: 'POST /chat'
+    },
+    timestamp: new Date().toISOString()
+  });
+});
+
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.json({ 

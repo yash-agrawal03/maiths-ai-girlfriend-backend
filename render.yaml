@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: maiths-ai-girlfriend-backend
+    env: node
+    plan: free
+    buildCommand: npm install && ./setup-production.sh
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: GOOGLE_AI_API_KEY
+        sync: false  # This will be set manually in Render dashboard

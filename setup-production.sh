@@ -2,9 +2,10 @@
 # setup-production.sh
 # This script sets up the vault.json file for production deployment
 
-echo "Setting up production environment..."
+echo "🚀 Setting up production environment..."
 
 # Create the .smyth/.sre directory if it doesn't exist
+echo "📁 Creating .smyth/.sre directory..."
 mkdir -p .smyth/.sre
 
 # Create vault.json with environment variables
